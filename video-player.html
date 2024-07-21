@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      body {
+        padding: 0;
+        margin: 0px;
+      }
+      .border1 {
+        width: 45rem;
+        height: 30rem;
+        border: 10px solid #59b1cf;
+        border-radius: 25px;
+      }
+      .border2 {
+        width: 15rem;
+        height: 30rem;
+        border: 10px solid #59b1cf;
+        border-radius: 25px;
+      }
+      .videoFile {
+        text-align: center;
+        font-size: 20px;
+        font-weight: bolder;
+        text-decoration-line: underline;
+      }
+      .cursor {
+        cursor: pointer;
+      }
+      svg {
+        width: 25px;
+        height: 25px;
+        :hover {
+          fill: #a1a1a1;
+        }
+      }
+      .range {
+        width: 100%;
+      }
+    </style>
+    <title>劉宇庭</title>
+  </head>
+  <body>
+    <div class="container d-flex flex-row">
+      <div class="border1 me-3">
+        <div id="crateID">
+          <video class="player" width="100%" autoplay>
+            <p>請上傳影片，上傳完即會自動播放!</p>
+          </video>
+        </div>
+        <div>
+          <input type="range" class="range" id="progress" />
+        </div>
+        <div class="d-flex">
+          <!-- <span id="videoOnTime"></span>
+          <span>/</span>
+          <span id="videoTime"></span> -->
+          <svg
+            id="pre"
+            class="ms-3 me-3 cursor"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 320 512"
+          >
+            <path
+              d="M267.5 440.6c9.5 7.9 22.8 9.7 34.1 4.4s18.4-16.6 18.4-29V96c0-12.4-7.2-23.7-18.4-29s-24.5-3.6-34.1 4.4l-192 160L64 241V96c0-17.7-14.3-32-32-32S0 78.3 0 96V416c0 17.7 14.3 32 32 32s32-14.3 32-32V271l11.5 9.6 192 160z"
+            />
+          </svg>
+          <svg
+            id="play"
+            class="ms-3 me-3 cursor"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 384 512"
+          >
+            <path
+              d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"
+            />
+          </svg>
+          <svg
+            id="pause"
+            class="ms-3 me-3 cursor"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 320 512"
+          >
+            <path
+              d="M48 64C21.5 64 0 85.5 0 112V400c0 26.5 21.5 48 48 48H80c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H48zm192 0c-26.5 0-48 21.5-48 48V400c0 26.5 21.5 48 48 48h32c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H240z"
+            />
+          </svg>
+          <svg
+            id="next"
+            class="ms-3 me-3 cursor"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 320 512"
+          >
+            <path
+              d="M52.5 440.6c-9.5 7.9-22.8 9.7-34.1 4.4S0 428.4 0 416V96C0 83.6 7.2 72.3 18.4 67s24.5-3.6 34.1 4.4l192 160L256 241V96c0-17.7 14.3-32 32-32s32 14.3 32 32V416c0 17.7-14.3 32-32 32s-32-14.3-32-32V271l-11.5 9.6-192 160z"
+            />
+          </svg>
+          <svg
+            id="stopVolume"
+            class="ms-3 cursor"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 320 512"
+          >
+            <path
+              d="M320 64c0-12.6-7.4-24-18.9-29.2s-25-3.1-34.4 5.3L131.8 160H64c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64h67.8L266.7 471.9c9.4 8.4 22.9 10.4 34.4 5.3S320 460.6 320 448V64z"
+            />
+          </svg>
+          <input class="me-3 cursor" type="range" id="volume" />
+        </div>
+      </div>
+      <div class="border2 list" id="list">
+        <div class="videoFile cursor mt-2 mb-2" id="add">
+          <i class="fa-solid fa-plus"></i>
+        </div>
+      </div>
+      <input id="uploadFile" type="file" accept="video/*" hidden />
+    </div>
+
+    <script>
+      const player = document.querySelector(".player");
+      const listDIV = document.querySelector("#list");
+      const progress = document.querySelector("#progress");
+      const volume = document.querySelector("#volume");
+      const ctrl = {
+        add: document.querySelector("#add"),
+        pre: document.querySelector("#pre"),
+        play: document.querySelector("#play"),
+        pause: document.querySelector("#pause"),
+        next: document.querySelector("#next"),
+        delete: document.querySelector("#delete"),
+      };
+      const uploadFile = document.querySelector("#uploadFile");
+      const crateID = document.querySelector("#crateID");
+      const stopVolume = document.querySelector("#stopVolume");
+      // const videoTime = document.querySelector("#videoTime");
+      // const videoOnTime = document.querySelector("#videoOnTime");
+
+      // 設置預設音量
+      player.volume = 0.4;
+
+      //console.log(uploadFile);
+      //console.log(list);
+      //console.log(list.v1);
+      //console.log(player);
+      // console.log(player.src);
+
+      //--以下--都是影片上傳
+      ctrl.add.addEventListener("click", (e) => {
+        //console.log(e.target);
+        uploadFile.click();
+      });
+
+      uploadFile.addEventListener("change", (e) => {
+        let files = e.target.files[0];
+
+        let reader = new FileReader();
+        reader.addEventListener("load", (e) => {
+          const videoFileCount = document.querySelectorAll(".videoFile").length;
+
+          //這裡要建立一個新的id/video/i的元素
+
+          let node = document.createElement("div");
+          node.classList.add(
+            "videoFile",
+            "cursor",
+            "mt-2",
+            "mb-2",
+            "draggableVideo"
+          );
+          node.id = `video${videoFileCount}`;
+          node.draggable = true;
+          node.textContent = `影片${videoFileCount}`;
+
+          let newVideo = document.createElement("video");
+          newVideo.src = e.target.result;
+          newVideo.classList.add("player");
+          newVideo.hidden = true;
+          newVideo.id = `video${videoFileCount}`;
+          player.src = e.target.result;
+          //console.log(newVideo.src);
+
+          let icon = document.createElement("i");
+          icon.classList.add("fa-regular", "fa-trash-can", "delete");
+          icon.id = `delete${videoFileCount}`;
+
+          listDIV.insertBefore(node, list.add);
+          listDIV.append(node);
+          node.append(icon);
+          crateID.append(newVideo);
+        });
+        reader.readAsDataURL(files);
+      });
+
+      // --以上影片上傳的東西
+
+      //想要點擊上傳後建立的影片n可以進行播放
+      listDIV.addEventListener("click", (e) => {
+        if (e.target.classList.contains("videoFile")) {
+          const videoId = e.target.id;
+          //console.log(videoId);
+          const videoElement = document.querySelector(`#${videoId}`);
+          //console.log(videoElement);
+          //console.log(videoElement.src);
+          const videoSource = videoElement.src;
+          //console.log(videoSource);
+          player.src = videoSource;
+          player.play();
+        }
+      });
+
+      //想要點擊ctrl的某一個控制的按鈕後，此按鈕出現符合他樣式的功能產生
+      // 播放按鈕
+      ctrl.play.addEventListener("click", () => {
+        player.play();
+      });
+
+      // 暫停按鈕
+      ctrl.pause.addEventListener("click", () => {
+        player.pause();
+      });
+
+      // 音量調整
+      volume.addEventListener("input", (e) => {
+        player.volume = e.target.value / 100;
+      });
+      stopVolume.addEventListener("click", (e) => {
+        if (player.volume > 0) {
+          player.volume = 0;
+        } else if (player.volume == 0) {
+          player.volume = 0.4;
+        }
+        volume.value = player.volume * 100; //即時調整音量
+      });
+
+      // 影片時間條
+
+      player.addEventListener("loadedmetadata", () => {
+        const duration = player.duration;
+        // const minutes = Math.floor(duration / 60);
+        // const seconds = Math.floor(duration / 60);
+        // let totalTime = `${minutes}分:${seconds}秒`
+        // //console.log(totalTime);
+        // videoTime.textContent= totalTime;
+      });
+
+      //目前播放的時間
+      player.addEventListener("timeupdate", () => {
+        progress.value = (player.currentTime / player.duration) * 100;
+        // console.log(progress.value);
+        // let minu = Math.floor(progress.value / 60);
+        // let sec = Math.floor(progress.value / 60);
+        // videoOnTime.textContent = `${minu}分:${sec}秒`;
+      });
+
+      progress.addEventListener("input", (e) => {
+        player.currentTime = (e.target.value / 100) * player.duration;
+      });
+
+      let currentVideoIndex = null;
+
+      //上一個按鈕
+      ctrl.pre.addEventListener("click", () => {
+        if (currentVideoIndex === null) {
+          currentVideoIndex = 0;
+        } else if (currentVideoIndex > 0) {
+          currentVideoIndex--;
+        }
+        playVideoAtIndex(currentVideoIndex);
+      });
+
+      //下一個按鈕
+      ctrl.next.addEventListener("click", () => {
+        const videoFiles = document.querySelectorAll(".draggableVideo");
+        if (currentVideoIndex === null) {
+          currentVideoIndex = 0;
+        } else if (currentVideoIndex < videoFiles.length - 1) {
+          currentVideoIndex++;
+        }
+        playVideoAtIndex(currentVideoIndex);
+      });
+
+      //播放指定索引的影片
+      function playVideoAtIndex(index) {
+        const videoFiles = document.querySelectorAll(".draggableVideo");
+        if (index >= 0 && index < videoFiles.length) {
+          const videoId = videoFiles[index].id;
+          const videoElement = document.querySelector(`#${videoId}`);
+          const videoSource = videoElement.src;
+          player.src = videoSource;
+          player.play();
+        }
+      }
+
+      //想要點擊垃圾桶後video的標籤被remove()
+      listDIV.addEventListener("click", (e) => {
+        //console.log(e.target);
+        if (e.target.classList.contains("delete")) {
+          const deleteIcon = e.target;
+          //console.log(deleteIcon);
+          const deleteVideo = deleteIcon.parentElement;
+          //console.log(deleteVideo);
+          deleteVideo.remove();
+        }
+      });
+
+      //  拖曳影片名稱互換位子
+      // 使用事件委派來處理動態添加(然後通過事件冒泡來捕獲事件)的draggableVideo元素，因為原本沒有draggableVideo 透過動態事件加上的所以要先把事情在別人身上再去找他
+
+      let draggedItem = null;
+      listDIV.addEventListener("dragstart", (e) => {
+        if (e.target.classList.contains("draggableVideo")) {
+          draggedItem = e.target;
+          //console.log(draggedItem);
+        }
+      });
+      listDIV.addEventListener("dragover", (e) => {
+        if (e.target.classList.contains("draggableVideo")) {
+          e.preventDefault();
+        }
+      });
+      listDIV.addEventListener("drop", (e) => {
+        if (e.target.classList.contains("draggableVideo")) {
+          e.preventDefault();
+          const _this = e.target;
+          if (_this !== draggedItem) {
+            let list = draggedItem.parentNode;
+            let draggingIndex = [...list.children].indexOf(draggedItem);
+            let dropIndex = [...list.children].indexOf(_this);
+            console.log(draggingIndex, dropIndex);
+
+            if (draggingIndex > dropIndex) {
+              list.insertBefore(draggedItem, _this);
+            } else {
+              list.insertBefore(draggedItem, _this.nextSibling);
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
