@@ -6,6 +6,9 @@
 ![screencapture-localhost-3000-menu-dessert-2024-07-21-19_44_12](https://github.com/user-attachments/assets/91c0467d-1aef-40bd-96d0-63db4f533260)
 ![screencapture-localhost-3000-menu-drink-2024-07-21-19_45_18](https://github.com/user-attachments/assets/f08ebd78-a222-48c7-9913-829285791062)
 ![screencapture-localhost-3000-menu-kcal-2024-07-21-19_46_06](https://github.com/user-attachments/assets/dfdc967a-ce08-4f4c-8283-f45afa4bdae5)
+![screencapture-localhost-3000-menu-2024-07-21-17_28_18](https://github.com/user-attachments/assets/e53b0af2-b32e-4386-a658-2d2fb13bbaf9)
+
 
 <h2>vedio player</h2>
+
 ![screencapture-file-C-Users-rainl-OneDrive-20240721-video-player-html-2024-07-21-23_03_21](https://github.com/user-attachments/assets/f46f6374-25fb-400a-a9d8-59cc97b435c2)
