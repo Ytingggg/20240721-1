@@ -1,0 +1,6 @@
+![Uploading screencapture-localhost-3000-menu-one-2024-07-21-19_41_58.png…]()
+![screencapture-localhost-3000-menu-combo-2024-07-21-19_42_42](https://github.com/user-attachments/assets/9990a5bf-ea98-455a-aa08-eba51314eefe)
+![screencapture-localhost-3000-menu-bento-2024-07-21-19_43_38](https://github.com/user-attachments/assets/3b547dae-9f10-4697-a59f-9cc3da8c9dcf)
+![screencapture-localhost-3000-menu-dessert-2024-07-21-19_44_12](https://github.com/user-attachments/assets/a0bb7dd5-5afa-4d2f-bd66-0a2f3ac011fe)
+![screencapture-localhost-3000-menu-drink-2024-07-21-19_45_18](https://github.com/user-attachments/assets/cc629967-b9db-4380-8216-2b75c672a266)
+![screencapture-localhost-3000-menu-kcal-2024-07-21-19_46_06](https://github.com/user-attachments/assets/1b11586c-48bb-4dd7-8b03-9fc237f3cc79)
